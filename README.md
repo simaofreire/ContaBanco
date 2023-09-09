@@ -1,18 +1,5 @@
 ## Getting Started
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+The `App` class is the entry point of the program. It creates an instance of the 'ContaBanco' class and calls its methods to gather information from the user and display the account details in the prompt.
 
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+The `ContaBanco` class represents a bank account in Java. It includes methods and validations for prompting the user to enter their name, agency, account number, and balance, and storing the input values in the corresponding fields of the class. It also includes a method for displaying the client's account details using the stored information.
