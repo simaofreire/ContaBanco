@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class ContaBanco {
@@ -9,6 +8,11 @@ public class ContaBanco {
 
   private Scanner scanner = new Scanner(System.in);
 
+  /**
+   * Prompts the user to enter their name and stores it in the `nomeCliente`
+   * field.
+   * If the name is empty, it prompts again.
+   */
   public void inserirNomeCliente() {
     System.out.println("Digite seu nome");
     nomeCliente = scanner.nextLine();
@@ -19,6 +23,10 @@ public class ContaBanco {
     }
   }
 
+  /**
+   * Prompts the user to enter their agency and stores it in the `agencia` field.
+   * If the agency is empty, it prompts again.
+   */
   public void inserirAgencia() {
     System.out.println("Digite sua agencia");
     agencia = scanner.nextLine();
@@ -29,6 +37,11 @@ public class ContaBanco {
     }
   }
 
+  /**
+   * Prompts the user to enter their account number and stores it in the `conta`
+   * field.
+   * If the account number is empty or not a valid integer, it prompts again.
+   */
   public void inserirConta() {
     try {
       System.out.println("Digite sua conta");
@@ -38,12 +51,16 @@ public class ContaBanco {
         System.out.println("Conta não pode ser vazia");
         inserirConta();
       }
-    } catch (Exception e) {
+    } catch (NumberFormatException e) {
       System.out.println("Por favor, insira um valor válido para a conta.");
       inserirConta();
     }
   }
 
+  /**
+   * Prompts the user to enter their balance and stores it in the `saldo` field.
+   * If the balance is empty or not a valid double, it prompts again.
+   */
   public void inserirSaldo() {
     try {
       System.out.println("Digite seu saldo");
@@ -54,19 +71,20 @@ public class ContaBanco {
         inserirSaldo();
       }
 
-    } catch (Exception e) {
-
+    } catch (NumberFormatException e) {
       System.out.println("Por favor, insira um valor válido para o saldo.");
       inserirSaldo();
     }
-
   }
 
+  /**
+   * Displays the client's account details using the stored information in the
+   * fields `nomeCliente`, `agencia`, `conta`, and `saldo`.
+   */
   public void mostrarContaCliente() {
-    System.out
-        .println(
-            "Olá " + nomeCliente + "." + "\nObrigado por criar uma conta em nosso banco.\nSua agência é: " + agencia
-                + " \nConta: " + conta + "\ne seu saldo de R$" + saldo + " já está disponível para saque.");
+    System.out.println("Olá " + nomeCliente +
+        ", obrigado por criar uma conta em nosso banco, sua agência é: " + agencia +
+        ", conta: " + conta +
+        " e seu saldo " + saldo + " já está disponível para saque.");
   }
-
 }
